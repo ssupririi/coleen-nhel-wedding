@@ -428,7 +428,7 @@ section {
   opacity: 0.8;
 }
 
-/* ── RSVP CONTAINER & FORM ──────────────────────────── */
+/* ── RSVP CONTAINER & FORM  */
 .rsvp-outer {
   background: linear-gradient(160deg, var(--ivory-bg) 0%, var(--champagne-light) 100%);
   padding: 0;
@@ -558,7 +558,7 @@ input[type="text"]:focus {
 }
 .btn-rsvp:active { transform: scale(0.99); }
 
-/* ── RSVP SUCCESS STATE ─────────────────────────────── */
+/* ── RSVP SUCCESS STATE  */
 .rsvp-success {
   display: none;
   text-align: center;
@@ -593,7 +593,7 @@ input[type="text"]:focus {
   line-height: 1.8;
 }
 
-/* ── FOOTER ─────────────────────────────────────────── */
+/* ── FOOTER  */
 footer {
   background: var(--champagne-light);
   text-align: center;
@@ -610,7 +610,7 @@ footer span {
   color: var(--champagne-muted);
 }
 
-/* ── ANIMATIONS ─────────────────────────────────────── */
+/* ── ANIMATIONS  */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -709,7 +709,7 @@ footer span {
 
 .col-center {
   grid-column: 2;
-  grid-row: 1 / span 2; /* Lets Secondary Sponsors sit perfectly without layout gaps */
+  grid-row: 1 / span 2;
   text-align: center;
 }
 
@@ -903,7 +903,6 @@ footer span {
   gap: 3rem;
 }
 
-/* Horizontal splits for Best Man/MOH and Groomsmen/Bridesmaids */
 .entourage-split-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -911,7 +910,6 @@ footer span {
   width: 100%;
 }
 
-/* Three column setup for the elements at the bottom */
 .secondary-trio-flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -920,12 +918,10 @@ footer span {
   width: 100%;
 }
 
-/* Drops candle slightly lower exclusively on desktop layouts */
 .item-candle {
   margin-top: 1.8rem;
 }
 
-/* ── RESPONSIVE MOBILE FIXES FOR MATCHING SCREEN CAPTURE ── */
 @media (max-width: 768px) {
   .entourage-split-row {
     display: flex !important;
@@ -941,7 +937,6 @@ footer span {
     width: 100% !important;
   }
 
-  /* Clears out desktop margins so it stacks centered on mobile phone */
   .item-candle {
     margin-top: 0 !important;
   }
@@ -952,7 +947,7 @@ footer span {
   }
 }
 
-/* ── DEVICE RESPONSIVENESS (MEDIA QUERIES) ──────────── */
+/* ── DEVICE RESPONSIVENESS (MEDIA QUERIES)  */
 @media (max-width: 768px) {
   section {
     padding: 4rem 1.5rem; 
@@ -1022,51 +1017,46 @@ footer span {
 /* ── BEARERS DIAMOND GRID LAYOUT (TIGHTENED) ── */
 .bearers-diamond-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 equal columns on desktop */
-  gap: 1.5rem 2rem; /* Reduced row gap from 3rem to 1.5rem */
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem; 
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
   align-items: start;
 }
 
-/* Force tighter spacing for headings inside the diamond grid */
 .bearers-diamond-grid .entourage-heading {
   margin-bottom: 0.25rem !important;
 }
 
-/* Make Flower Girls stretch across the top center */
 .bearer-top {
   grid-column: span 2;
   text-align: center;
-  margin-bottom: 0.5rem; /* Reduced spacing */
+  margin-bottom: 0.5rem; 
 }
 
-/* Position Ring Bearer on the left column */
 .bearer-left {
   grid-column: 1;
   text-align: center;
 }
 
-/* Position Bible Bearer on the right column */
 .bearer-right {
   grid-column: 2;
   text-align: center;
 }
 
-/* Make Coin Bearer stretch across the bottom center */
 .bearer-bottom {
   grid-column: span 2;
   text-align: center;
-  margin-top: 0.5rem; /* Reduced spacing */
+  margin-top: 0.5rem; 
 }
 
 /* ── MOBILE RESPONSIVENESS OVERRIDE ── */
 @media (max-width: 768px) {
   .bearers-diamond-grid {
     display: flex !important;
-    flex-direction: column !important; /* Stack vertically on phones */
-    gap: 1.8rem !important; /* Matches the tight feel of mobile secondary sponsors */
+    flex-direction: column !important;
+    gap: 1.8rem !important;
   }
   
   .bearer-top, .bearer-left, .bearer-right, .bearer-bottom {
