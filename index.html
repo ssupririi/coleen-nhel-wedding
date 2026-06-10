@@ -202,7 +202,7 @@
         
         <div class="sponsor-pair-row" style="margin-bottom: 0.4rem;">
           <div class="sponsor-male"><p class="entourage-name">Mr. Francisco Gaspi</p></div>
-          <div class="sponsor-female" style="visibility: hidden; opacity: 0;"><p class="entourage-name">—</p></div>
+          <div class="sponsor-female"><p class="entourage-name">Mrs. Victoria Go</p></div>
         </div>
       </div>
 
@@ -384,6 +384,37 @@
     const NAME_ENTRY = 'entry.1767225716';
     const ATTENDANCE_ENTRY = 'entry.284673815';
 
+    // ── CHECK IF USER ALREADY SUBMITTED ON PAGE LOAD ──
+    window.addEventListener('DOMContentLoaded', () => {
+      const hasRSVPed = localStorage.getItem('hasRSVPed');
+      const savedName = localStorage.getItem('rsvpName');
+      const savedAttendance = localStorage.getItem('rsvpAttendance');
+
+      if (hasRSVPed === 'true' && savedName) {
+        showSuccessState(savedName, savedAttendance);
+      }
+    });
+
+    // ── HELPER FUNCTION TO CHOOSE AND SHOW SUCCESS STATE ──
+    function showSuccessState(name, attendance) {
+      document.getElementById('rsvpForm').style.display = 'none';
+      if(document.querySelector('.rsvp-header-inline')) {
+        document.querySelector('.rsvp-header-inline').style.display = 'none';
+      }
+      
+      const success = document.getElementById('rsvpSuccess');
+      success.style.display = 'block';
+
+      if (attendance === "Absolutely, wouldn't miss it!") {
+        document.getElementById('successTitle').textContent = "Can't wait to see you! 🥂";
+        document.getElementById('successBody').innerHTML = `Hey ${name}, your RSVP is locked in! See you at Lazuri, Tagaytay.<br><br><em>With love, Coleen &amp; Nhel</em>`;
+      } else {
+        document.getElementById('successTitle').textContent = "We'll miss you! 💌";
+        document.getElementById('successBody').innerHTML = `Thank you for letting us know, ${name}. We will miss celebrating with you!<br><br><em>With love, Coleen &amp; Nhel</em>`;
+      }
+    }
+
+    // ── SUBMIT RSVP FUNCTION ──
     async function submitRSVP() {
       const name = document.getElementById('guestName').value.trim();
       const attendanceRadio = document.querySelector('input[name="attendance"]:checked');
@@ -410,21 +441,13 @@
         });
       } catch (e) {}
 
-      document.getElementById('rsvpForm').style.display = 'none';
-      if(document.querySelector('.rsvp-header-inline')) {
-        document.querySelector('.rsvp-header-inline').style.display = 'none';
-      }
-      
-      const success = document.getElementById('rsvpSuccess');
-      success.style.display = 'block';
+      // ── SAVE FLAG TO BROWSER STORAGE BEFORE ALTERING UI ──
+      localStorage.setItem('hasRSVPed', 'true');
+      localStorage.setItem('rsvpName', name);
+      localStorage.setItem('rsvpAttendance', attending);
 
-      if (attending === "Absolutely, wouldn't miss it!") {
-        document.getElementById('successTitle').textContent = "Can't wait to see you! 🥂";
-        document.getElementById('successBody').innerHTML = `Hey ${name}, your RSVP is locked in! See you at Lazuri, Tagaytay.<br><br><em>With love, Coleen &amp; Nhel</em>`;
-      } else {
-        document.getElementById('successTitle').textContent = "We'll miss you! 💌";
-        document.getElementById('successBody').innerHTML = `Thank you for letting us know, ${name}. We will miss celebrating with you!<br><br><em>With love, Coleen &amp; Nhel</em>`;
-      }
+      // Render the success screen layout
+      showSuccessState(name, attending);
     }
 
     document.getElementById('submitBtn').addEventListener('click', submitRSVP);
