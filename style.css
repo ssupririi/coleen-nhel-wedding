@@ -1,4 +1,4 @@
-/* ── BASE RESET & THEME VARIABLES ──────────────────── */
+/* ── 1. BASE RESET & THEME VARIABLES ────────────────── */
 *, *::before, *::after { 
   box-sizing: border-box; 
   margin: 0; 
@@ -27,7 +27,68 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HERO SECTION ───────────────────────────────────── */
+/* ── 2. TYPOGRAPHY & STRUCTURAL COMPONENTS ─────────── */
+section {
+  padding: 6rem 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bg-light {
+  background-color: #ffffff;
+}
+
+.bg-alt {
+  background-color: #fbf9f5; 
+  border-top: 1px solid rgba(212, 178, 111, 0.15);
+  border-bottom: 1px solid rgba(212, 178, 111, 0.15);
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--champagne-muted);
+  margin-bottom: 1.2rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep-bronze);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.thin-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--champagne-gold);
+  margin: 0 auto 2.5rem;
+}
+
+.body-text {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.horizontal-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 178, 111, 0.25), transparent);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* ── 3. HERO SECTION ────────────────────────────────── */
 .hero {
   max-width: 100% !important; 
   width: 100%;
@@ -41,7 +102,6 @@ body {
   position: relative;
   background: var(--champagne-light); 
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .hero::before {
@@ -133,7 +193,7 @@ body {
   animation: scrollLine 1.5s ease-in-out infinite;
 }
 
-/* ── PHOTO PLACEHOLDERS ────────────────────────────── */
+/* ── 4. PHOTO PLACEHOLDERS ─────────────────────────── */
 .photo-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -171,61 +231,7 @@ body {
   padding: 1rem;
 }
 
-/* ── GENERAL SECTIONS ───────────────────────────────── */
-section {
-  padding: 6rem 2rem;
-  max-width: 820px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.bg-light {
-  background-color: #ffffff;
-}
-
-.bg-alt {
-  background-color: #fbf9f5; 
-  border-top: 1px solid rgba(212, 178, 111, 0.15);
-  border-bottom: 1px solid rgba(212, 178, 111, 0.15);
-  max-width: 100% !important;
-  width: 100%;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--champagne-muted);
-  margin-bottom: 1.2rem;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--deep-bronze);
-  line-height: 1.2;
-  margin-bottom: 2rem;
-}
-
-.thin-rule {
-  width: 60px;
-  height: 1px;
-  background: var(--champagne-gold);
-  margin: 0 auto 2.5rem;
-}
-
-.body-text {
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.9;
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* ── EVENT DETAILS CARDS ────────────────────────────── */
+/* ── 5. EVENT DETAILS CARDS ─────────────────────────── */
 .details-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -272,7 +278,80 @@ section {
   font-weight: 300;
 }
 
-/* ── MINIMALIST DRESS CODE DESIGN ─────────────────── */
+/* ── 6. TIMELINE ────────────────────────────────────── */
+.timeline {
+  list-style: none;
+  position: relative;
+  max-width: 460px;
+  margin: 3rem 0 0 0;
+  text-align: left; 
+  padding-left: 35px; 
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; 
+  top: 10px;
+  bottom: 25px; 
+  width: 1px;
+  background: var(--champagne-gold); 
+  opacity: 0.5;
+  display: block;
+}
+
+.timeline li {
+  padding: 0 0 2.5rem 20px; 
+  position: relative;
+  list-style-type: none; 
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -19px; 
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--champagne-gold); 
+  z-index: 2;
+}
+
+.tl-time {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne-muted); 
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.tl-event {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--deep-bronze); 
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.tl-note {
+  font-size: 0.85rem;
+  color: var(--text-muted); 
+  margin-top: 0.15rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ── 7. ATTIRE & DRESS CODE ─────────────────────────── */
+.dress-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100%;
+}
+
 .dress-container {
   max-width: 820px;
   margin: 0 auto;
@@ -303,14 +382,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.dress-section {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  width: 100%;
 }
 
 .card-title {
@@ -363,72 +434,292 @@ section {
   padding-top: 1.5rem;
 }
 
-/* ── TIMELINE ──────────────────────────── */
-.timeline {
-  list-style: none;
-  position: relative;
-  max-width: 460px;
-  margin: 3rem 0 0 0;
-  text-align: left; 
-  padding-left: 35px; 
+/* ── 8. WEDDING ENTOURAGE ───────────────────────────── */
+.sponsors-section {
+  max-width: 900px !important;
+  margin: 0 auto;
+  padding: 6rem 2rem;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 6px; 
-  top: 10px;
-  bottom: 25px; 
-  width: 1px;
-  background: var(--champagne-gold); 
-  opacity: 0.5;
-  display: block !important;
+.sponsors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 4rem;
+  text-align: center;
+  width: 100%;
 }
 
-.timeline li {
-  padding: 0 0 2.5rem 20px; 
-  position: relative;
-  list-style-type: none; 
+.sponsors-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.timeline li::before {
-  content: '';
-  position: absolute;
-  left: -19px; 
-  top: 4px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--champagne-gold); 
-  z-index: 2;
+.structural-double, .structural-full {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.tl-time {
+.structural-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sponsor-pair-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+}
+
+.sponsor-pair-row .sponsor-male {
+  flex: 1;
+  text-align: right;
+}
+
+.sponsor-pair-row .sponsor-female {
+  flex: 1;
+  text-align: left;
+}
+
+.wedding-party-flow-container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.entourage-split-row, .secondary-trio-flex {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.entourage-split-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+.secondary-trio-flex {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item-candle {
+  margin-top: 1.8rem;
+}
+
+.entourage-heading {
+  font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--champagne-muted); 
-  margin-bottom: 0.2rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--champagne-muted);
+  margin-bottom: 1.2rem;
 }
 
-.tl-event {
+.heading-center {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.entourage-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  color: var(--deep-bronze); 
+  font-size: 1.15rem;
   font-weight: 400;
-  line-height: 1.2;
+  color: var(--deep-bronze);
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
 }
 
-.tl-note {
-  font-size: 0.85rem;
-  color: var(--text-muted); 
-  margin-top: 0.15rem;
+.text-highlight {
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+/* Bearers Diamond Grid */
+.bearers-diamond-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem; 
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.bearers-diamond-grid .entourage-heading {
+  margin-bottom: 0.25rem !important;
+}
+
+.bearer-top {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 0.5rem; 
+}
+
+.bearer-left {
+  grid-column: 1;
+  text-align: center;
+}
+
+.bearer-right {
+  grid-column: 2;
+  text-align: center;
+}
+
+.bearer-bottom {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 0.5rem; 
+}
+
+/* ── 9. GUEST GUIDE & FAQs ──────────────────────────── */
+.guide-section {
+  background: var(--champagne-light);
+  max-width: 100% !important;
+  width: 100%;
+  padding: 6rem 2rem;
+}
+
+.guide-cards-stack {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Clean vertical stack layout */
+}
+
+.guide-card, .reminders-card, .share-card {
+  background: var(--ivory-pure);
+  padding: 3.5rem 2.5rem;
+  border: 1px solid rgba(212, 178, 111, 0.15);
+  box-shadow: 0 4px 20px rgba(44, 37, 32, 0.02);
+  text-align: center;
+}
+
+.guide-card-flex, .share-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guide-card-info {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.guide-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--champagne-muted);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.guide-card-text {
   font-weight: 300;
-  opacity: 0.8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  text-align: justify;
+  font-variant: normal;
+  text-transform: none;
 }
 
-/* ── RSVP CONTAINER & FORM  */
+.guide-hashtag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--deep-bronze);
+  margin-top: 1rem;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+/* QR Code & Information Grid */
+.qr-container {
+  text-align: center;
+  border: 1px dashed #D4B26F;
+  padding: 1.5rem;
+  background: #ffffff;
+  min-width: 180px;
+  margin: 0 auto;
+}
+
+.qr-container img {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: 0 auto 0.8rem auto;
+  object-fit: contain;
+}
+
+.qr-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2C2520;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.qr-subtext {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  color: #777777;
+  display: block;
+  margin-top: 2px;
+}
+
+.qr-subtext a {
+  color: #D4B26F;
+  text-decoration: underline;
+}
+
+.reminders-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.reminder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reminder-item h5 {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--deep-bronze);
+  margin-bottom: 0.5rem;
+}
+
+.reminder-item p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* ── 10. RSVP CONTAINER & FORM ──────────────────────── */
 .rsvp-outer {
   background: linear-gradient(160deg, var(--ivory-bg) 0%, var(--champagne-light) 100%);
   padding: 0;
@@ -558,7 +849,6 @@ input[type="text"]:focus {
 }
 .btn-rsvp:active { transform: scale(0.99); }
 
-/* ── RSVP SUCCESS STATE  */
 .rsvp-success {
   display: none;
   text-align: center;
@@ -593,7 +883,7 @@ input[type="text"]:focus {
   line-height: 1.8;
 }
 
-/* ── FOOTER  */
+/* ── 11. FOOTER ─────────────────────────────────────── */
 footer {
   background: var(--champagne-light);
   text-align: center;
@@ -610,7 +900,7 @@ footer span {
   color: var(--champagne-muted);
 }
 
-/* ── ANIMATIONS  */
+/* ── 12. ANIMATIONS ─────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -632,322 +922,7 @@ footer span {
   transform: none;
 }
 
-/* ── ENTOURAGE & SPONSORS STYLING ── */
-.sponsors-section {
-  max-width: 900px !important;
-  margin: 0 auto;
-  padding: 6rem 2rem;
-}
-
-/* Base structural flow container */
-.sponsors-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  margin-top: 4rem;
-  text-align: center;
-  width: 100%;
-}
-
-.sponsors-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.structural-double {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.structural-full {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Principal Sponsors Specific Rows */
-.sponsor-pair-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 1rem auto;
-}
-.sponsor-pair-row .sponsor-male {
-  flex: 1;
-  text-align: right;
-}
-.sponsor-pair-row .sponsor-female {
-  flex: 1;
-  text-align: left;
-}
-
-/* Balanced Desktop Grid Layout that solves the left-side crunch */
-.entourage-desktop-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  gap: 2rem 4rem;
-  align-items: start;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.col-left {
-  grid-column: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  text-align: center;
-}
-
-.col-center {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  text-align: center;
-}
-
-.col-right {
-  grid-column: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  text-align: center;
-}
-
-/* Bearers & Kids Grid block style */
-.bearers-grid-block {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem 2rem;
-  width: 100%;
-}
-
-.entourage-heading {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--champagne-muted);
-  margin-bottom: 1.2rem;
-}
-
-.heading-center {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.header-margin-top {
-  margin-top: 2rem;
-}
-
-.entourage-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--deep-bronze);
-  line-height: 1.6;
-  margin-bottom: 0.3rem;
-}
-
-.text-highlight {
-  font-size: 1.35rem;
-  font-style: italic;
-}
-
-.sub-role-container {
-  margin-bottom: 0.5rem;
-}
-.separator-margin {
-  margin-bottom: 1.5rem;
-}
-
-.mini-role-label {
-  display: block;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #a3968e;
-  margin-bottom: 0.2rem;
-}
-
-.horizontal-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 178, 111, 0.25), transparent);
-  margin: 1rem 0;
-  width: 100%;
-}
-
-/* ── GIFT GUIDE & REMINDERS STYLING ── */
-.guide-section {
-  background: var(--champagne-light);
-  max-width: 100% !important;
-  width: 100%;
-  padding: 6rem 2rem;
-}
-
-.guide-container {
-  max-width: 820px;
-  margin: 3rem auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.guide-card, .reminders-card, .share-card {
-  background: var(--ivory-pure);
-  padding: 3.5rem 2.5rem;
-  border: 1px solid rgba(212, 178, 111, 0.15);
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(44, 37, 32, 0.02);
-}
-
-.guide-card-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--champagne-muted);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
-}
-
-.guide-card-text {
-  font-weight: 300;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-  max-width: 580px;
-  margin: 0 auto;
-}
-
-.reminders-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.reminder-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.reminder-item h5 {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--deep-bronze);
-  margin-bottom: 0.5rem;
-}
-
-.reminder-item p {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  font-weight: 300;
-}
-
-.guide-hashtag {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  color: var(--deep-bronze);
-  margin-top: 1.5rem;
-  letter-spacing: 0.05em;
-}
-
-/* ── SECONDARY TRIO LAYOUT (VEIL, CANDLE, CORD) ── */
-.secondary-trio-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-  width: 100%;
-}
-
-/* Shifts the candle row downwards on desktop screen sizes */
-.role-candle {
-  margin-top: 1.5rem; 
-}
-
-/* Ensure mobile handles this clean new trio grid layout smoothly */
-@media (max-width: 768px) {
-  .secondary-trio-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5rem !important;
-  }
-  .role-candle {
-    margin-top: 0 !important; /* Resets the lower spacing step on mobile phones */
-  }
-}
-
-/* ── MODERN WEDDING PARTY CROSS-PLATFORM SYSTEM ── */
-.wedding-party-flow-container {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.entourage-split-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  width: 100%;
-}
-
-.secondary-trio-flex {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-  width: 100%;
-}
-
-.item-candle {
-  margin-top: 1.8rem;
-}
-
-@media (max-width: 768px) {
-  .entourage-split-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5rem !important;
-    width: 100% !important;
-  }
-
-  .secondary-trio-flex {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5rem !important;
-    width: 100% !important;
-  }
-
-  .item-candle {
-    margin-top: 0 !important;
-  }
-  
-  .trio-item, .entourage-split-row .sponsors-block {
-    width: 100% !important;
-    text-align: center !important;
-  }
-}
-
-/* ── DEVICE RESPONSIVENESS (MEDIA QUERIES)  */
+/* ── 13. GLOBAL MEDIA RESPONSIVENESS OVERRIDES ──────── */
 @media (max-width: 768px) {
   section {
     padding: 4rem 1.5rem; 
@@ -966,104 +941,68 @@ footer span {
     font-size: 1.2rem;
   }
 
-  .dress-code-grid {
-    grid-template-columns: 1fr;
+  .dress-code-grid, .reminders-icon-grid, .bearers-diamond-grid {
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
 
-  .reminders-icon-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  /* Entourage Section Responsive Conversion */
-  .entourage-desktop-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5rem !important;
-  }
-
-  .col-left, .col-center, .col-right {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5rem !important;
-  }
-
+  /* Entourage Conversions */
   .structural-double {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
 
-  .sponsor-pair-row {
+  .sponsor-pair-row, .entourage-split-row, .secondary-trio-flex {
     flex-direction: column !important;
-    gap: 0.25rem !important;
-    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
   }
   
   .sponsor-pair-row .sponsor-male,
-  .sponsor-pair-row .sponsor-female {
+  .sponsor-pair-row .sponsor-female,
+  .trio-item, .entourage-split-row .sponsors-block {
     text-align: center !important;
     flex: none !important;
     width: 100% !important;
   }
 
-  .bearers-grid-block {
-    grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
+  .sponsor-pair-row {
+    gap: 0.25rem !important;
+    margin-bottom: 1.5rem !important;
   }
-}
 
-/* ── BEARERS DIAMOND GRID LAYOUT (TIGHTENED) ── */
-.bearers-diamond-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 2rem; 
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.bearers-diamond-grid .entourage-heading {
-  margin-bottom: 0.25rem !important;
-}
-
-.bearer-top {
-  grid-column: span 2;
-  text-align: center;
-  margin-bottom: 0.5rem; 
-}
-
-.bearer-left {
-  grid-column: 1;
-  text-align: center;
-}
-
-.bearer-right {
-  grid-column: 2;
-  text-align: center;
-}
-
-.bearer-bottom {
-  grid-column: span 2;
-  text-align: center;
-  margin-top: 0.5rem; 
-}
-
-/* ── MOBILE RESPONSIVENESS OVERRIDE ── */
-@media (max-width: 768px) {
-  .bearers-diamond-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.8rem !important;
+  .item-candle {
+    margin-top: 0 !important;
   }
-  
+
   .bearer-top, .bearer-left, .bearer-right, .bearer-bottom {
     grid-column: auto !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .guide-cards-stack {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .guide-card, .share-card {
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .guide-card-flex, .share-card {
+    justify-content: center;
+  }
+
+  .guide-card-info, .guide-card-text {
     text-align: center !important;
   }
 }
@@ -1089,23 +1028,5 @@ footer span {
   .timeline {
     max-width: 100%;
     padding-left: 25px; 
-  }
-}
-
-@media (max-width: 767px) {
-  .guide-card, .share-card {
-    justify-content: center !important;
-    text-align: center !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  .guide-card > div[style*="flex: 1"], 
-  .share-card > div[style*="flex: 1"] {
-    min-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-  }
-  .guide-card-text {
-    text-align: center !important;
   }
 }
